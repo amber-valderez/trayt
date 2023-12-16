@@ -16,7 +16,6 @@ import { debounce } from "@mui/material";
 import { useAtom } from "jotai";
 import { ChangeEvent, FormEvent, useMemo, useState } from "react";
 import { router } from ".";
-import { usePageEffect } from "../core/page";
 import { directDepositAtom } from "../core/store";
 import { DirectDepositFrequency } from "../enums";
 
@@ -25,7 +24,6 @@ interface FormData {
 }
 
 export const Component = (): JSX.Element => {
-  usePageEffect({ title: "Splash" });
   const defaultFrequency = DirectDepositFrequency.OncePerMonth;
   const initialFormData: FormData = {
     accountNumber: "",

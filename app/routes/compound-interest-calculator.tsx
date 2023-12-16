@@ -29,7 +29,6 @@ const calculateAmount = (
   monthlyInstallment: number,
 ) => {
   return (monthlyInstallment * ((1 + rate) ** months - 1)) / rate;
-  // let r = (0.05/12); 1000 * ((((1 + r) ** (12)) - 1) / (r))
 };
 export const Component = function CompoundInterestCalculator(): JSX.Element {
   const todayJs = dayjs(new Date().toLocaleDateString());
@@ -61,7 +60,6 @@ export const Component = function CompoundInterestCalculator(): JSX.Element {
   }
 
   return (
-    // <Container sx={{ mt: 10, py: 2 }}>
     <Stack
       direction="column"
       justifyContent="center"

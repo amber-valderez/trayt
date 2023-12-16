@@ -1,9 +1,7 @@
 import { Box, Button, Container, Typography } from "@mui/joy";
 import { Link } from "react-router-dom";
-import { usePageEffect } from "../core/page";
 
 export const Component = (): JSX.Element => {
-  usePageEffect({ title: "Splash" });
   return (
     <Container sx={{ py: 2 }}>
       <Typography sx={{ mb: 2, textAlign: "center" }} level="h2">
