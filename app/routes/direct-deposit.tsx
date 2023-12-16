@@ -70,9 +70,17 @@ export const Component = (): JSX.Element => {
     value: string | DirectDepositFrequency,
   ) => {
     handleValidation(name, value);
-    if (name === "amount" && typeof value === "string") {
-      value = value.replace("$", "");
-      value = value.replace("-", "");
+    if (typeof value === "string") {
+      if (
+        name === "amount" ||
+        name === "routingNumber" ||
+        name === "accountNumber"
+      ) {
+        value = value.replace("-", "");
+      }
+      if (name === "amount") {
+        value = value.replace("$", "");
+      }
     }
     setFormData((prevData) => ({
       ...prevData,
@@ -195,6 +203,7 @@ export const Component = (): JSX.Element => {
                 value={formData.accountNumber}
                 onChange={handleChange}
                 error={errors.accountNumber}
+                type="number"
                 style={{ width: "400px" }}
               />
               {errors.accountNumber && (
