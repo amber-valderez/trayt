@@ -3,7 +3,6 @@
 [Generate]
 
 ```
-$ cd ./example
 $ corepack enable
 $ yarn install
 $ yarn workspace app start
